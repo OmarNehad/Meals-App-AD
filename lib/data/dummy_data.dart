@@ -55,6 +55,11 @@ const availableCategories = [
     title: 'Summer',
     color: Colors.teal,
   ),
+  Category(
+    id: 'c11',
+    title: 'Sweet',
+    color: Colors.yellow,
+  ),
 ];
 
 const dummyMeals = [
@@ -372,6 +377,7 @@ const dummyMeals = [
     isVegetarian: true,
     isLactoseFree: false,
   ),
+
   Meal(
     id: 'm10',
     categories: [
@@ -405,5 +411,71 @@ const dummyMeals = [
     isVegan: true,
     isVegetarian: true,
     isLactoseFree: true,
+  ),
+  
+  Meal(
+    id: 'm11',
+    categories: ['c11'],
+    title: 'Chocolate Cake',
+    imageUrl: 'https://scientificallysweet.com/wp-content/uploads/2020/09/IMG_4087-feature-2.jpg',
+    ingredients: [
+      '1 cup all-purpose flour',
+      '1 cup sugar',
+      '1/2 cup cocoa powder',
+      '1 teaspoon baking powder',
+      '1/2 teaspoon baking soda',
+      '1/2 teaspoon salt',
+      '1/2 cup vegetable oil',
+      '1 cup water',
+      '1 teaspoon vanilla extract',
+      '1 tablespoon vinegar'
+    ],
+    steps: [
+      'Preheat oven to 350°F (175°C). Grease and flour a 9x9 inch pan.',
+      'In a large bowl, combine flour, sugar, cocoa, baking powder, baking soda, and salt.',
+      'Add oil, water, and vanilla. Mix until smooth. Stir in vinegar last.',
+      'Pour into prepared pan.',
+      'Bake for 30 to 35 minutes in the preheated oven, or until a toothpick inserted into the center comes out clean.',
+      'Allow to cool before serving.'
+    ],
+    duration: 45,
+    complexity: Complexity.simple,
+    affordability: Affordability.affordable,
+    isGlutenFree: false,
+    isLactoseFree: true,
+    isVegan: true,
+    isVegetarian: true,
+  ),
+  Meal(
+    id: 'm12',
+    categories: ['c11'],
+    title: 'Lemon Tart',
+    imageUrl: 'https://www.recipetineats.com/wp-content/uploads/2021/06/French-Lemon-Tart_5-main-SQ.jpg',
+    ingredients: [
+      '1 cup all-purpose flour',
+      '1/2 cup unsalted butter, chilled and diced',
+      '1/4 cup sugar',
+      '1/4 teaspoon salt',
+      '4 large eggs',
+      '1 cup granulated sugar',
+      '1/2 cup lemon juice',
+      '2 tablespoons lemon zest',
+      '1/2 cup heavy cream'
+    ],
+    steps: [
+      'Preheat oven to 350°F (175°C). Grease a 9-inch tart pan.',
+      'In a medium bowl, mix flour, butter, sugar, and salt until mixture resembles coarse crumbs. Press into the bottom of the prepared pan.',
+      'Bake for 20 minutes, or until lightly golden.',
+      'In a separate bowl, whisk together eggs, sugar, lemon juice, and zest. Stir in the cream.',
+      'Pour mixture into the baked crust.',
+      'Bake for an additional 30 minutes, or until filling is set. Let cool before serving.'
+    ],
+    duration: 60,
+    complexity: Complexity.challenging,
+    affordability: Affordability.pricey,
+    isGlutenFree: false,
+    isLactoseFree: false,
+    isVegan: false,
+    isVegetarian: true,
   ),
 ];
