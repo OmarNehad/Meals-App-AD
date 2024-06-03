@@ -73,6 +73,23 @@ class MainDrawer extends StatelessWidget {
               onSelectScreen('filters');
             },
           ),
+          // Maybe Modify this ListTile.
+          ListTile(
+            leading: Icon(
+              Icons.light_mode_rounded,
+              size: 26,
+              color: Theme.of(context).colorScheme.onBackground,
+            ),
+            title: Text(
+              'Mode',
+              style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                  color: Theme.of(context).colorScheme.onBackground,
+                  fontSize: 24),
+            ),
+            onTap: () {
+              Navigator.of(context).pushNamed('/mode');
+            },
+          ),
         ],
       ),
     );
