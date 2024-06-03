@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:meals/data/dummy_data.dart';
 import 'package:meals/screens/categories.dart';
-import 'package:meals/screens/filters.dart';
 import 'package:meals/screens/meals.dart';
 import 'package:meals/models/meal.dart';
 import 'package:meals/widgets/main_drawer.dart';
 
+enum Filter {
+  glutenFree,
+  lactoseFree,
+  vegetarian,
+  vegan,
+}
 var kinitialValues = {
   Filter.glutenFree: false,
   Filter.lactoseFree: false,
@@ -98,22 +103,6 @@ class _TabsScreen extends State<TabsScreen> {
     setState(() {
       _selectedPageIndex = index;
     });
-  }
-
-  void _setScreen(String identfire) async {
-    Navigator.of(context).pop();
-    if (identfire == 'filters') {
-      final result = await Navigator.of(context).push<Map<Filter, bool>>(
-        MaterialPageRoute(
-          builder: (ctx) => FiltersScreen(
-            currentFilters: _selectedFilters,
-          ),
-        ),
-      );
-      setState(() {
-        _selectedFilters = result ?? kinitialValues;
-      });
-    }
   }
 
   @override
@@ -323,9 +312,7 @@ class _TabsScreen extends State<TabsScreen> {
           ),
         ],
       ),
-      drawer: MainDrawer(
-        onSelectScreen: _setScreen,
-      ),
+      drawer: MainDrawer(),
       body: _isLoading
           ? const Center(
               child: CircularProgressIndicator(color: Colors.white),
